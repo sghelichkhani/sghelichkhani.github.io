@@ -5,8 +5,7 @@ enableRobotsTXT = true
 languageCode = "en"
 # Choose one of emacs, trac or perldoc
 pygmentsStyle = "monokai"
-theme = "gokarna"
-title = "Sia Ghelichkhan's Homepage"
+title = "Sia Ghelichkhan"
 
 [params]
   avatarAltText = "avatar"
@@ -36,7 +35,7 @@ title = "Sia Ghelichkhan's Homepage"
 
   description = "Sapere aude."
 
-  metaKeywords = ["blog", "gokarna", "hugo"]
+  metaKeywords = ["Sia", "Ghelichkhan", "Earth Sciences", "Geodynamics", "Groundwater", "hugo"]
   showBackToTopButton = true # true or false for "back to top" button on posts and pages
 
   socialIcons = [
@@ -62,16 +61,16 @@ title = "Sia Ghelichkhan's Homepage"
     weight = 2
 
   [[menu.main]]
-    name = "Curriculum Vitae"
-    pre = "<span data-feather=''></span>"
-    url = "/cv/"
+    name = "Research"
+    pre = "<span data-feather='code'></span>"
+    url = "/research/"
     weight = 3
 
   [[menu.main]]
-    name = "Projects"
-    pre = "<span data-feather='code'></span>"
-    url = "/projects/"
-    weight = 3
+    name = "Curriculum Vitae"
+    pre = "<span data-feather=''></span>"
+    url = "/cv/"
+    weight = 4
 
   [[menu.main]]
     name = "Tags"
@@ -82,14 +81,8 @@ title = "Sia Ghelichkhan's Homepage"
   [[menu.main]]
     identifier = "github"
     pre = "<span data-feather='github'></span>"
-    url = "https://github.com/gokarna-theme/gokarna-hugo"
+    url = "https://github.com/sghelichkhani/"
     weight = 5
-
-  [[menu.main]]
-    identifier = "buymeacoffee"
-    pre = "<span data-feather='coffee'></span>"
-    url = "https://www.buymeacoffee.com/avijitgupta"
-    weight = 6
 
   [[menu.main]]
     identifier = "rss"
