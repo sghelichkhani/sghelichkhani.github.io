@@ -1,4 +1,4 @@
-baseURL = "https://www.sia-g.com"
+baseURL = "https://sia-g.com"
 defaultContentLanguage = "en"
 enableEmoji = true
 enableRobotsTXT = true
@@ -39,7 +39,7 @@ title = "Sia Ghelichkhan"
   showBackToTopButton = true # true or false for "back to top" button on posts and pages
 
   socialIcons = [
-    {name = "ANU", url = "https://earthsciences.anu.edu.au/people/dr-sia-ghelichkhan"},
+    {name = "anu", url = "https://earthsciences.anu.edu.au/people/dr-sia-ghelichkhan"},
     {name = "email", url = "mailto:siavash.ghelchkhan@anu.edu.au"},
     {name = "github", url = "https://github.com/sghelichkhani"},
     {name = "linkedin", url = "https://www.linkedin.com/in/sia-ghelichkhan-36836026b/"},
