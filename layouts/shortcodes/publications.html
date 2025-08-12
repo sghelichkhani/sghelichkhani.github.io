@@ -1,0 +1,150 @@
+<div class="publications-list">
+  {{ $publications := .Site.Data.publications }}
+  {{ $sortedPubs := sort $publications "issued.date-parts" "desc" }}
+  {{ range $index, $pub := $sortedPubs }}
+  <div class="publication-item">
+    <ul>
+      <li>
+        <!-- Authors -->
+        <span class="authors">
+          {{ $authors := slice }}
+          {{ range .author }}
+            {{ if .literal }}
+              {{ $authors = $authors | append .literal }}
+            {{ else }}
+              {{ $authors = $authors | append (printf "%s. %s" (substr .given 0 1) .family) }}
+            {{ end }}
+          {{ end }}
+          {{ delimit $authors ", " " and " }}
+        </span>
+
+        <!-- Year -->
+        {{ if .issued }}
+        <span class="year">
+          ({{ range index .issued "date-parts" }}{{ index . 0 }}{{ end }})
+        </span>
+        {{ end }}
+
+        <!-- Title -->
+        <span class="title">
+          {{ if .URL }}
+            <a href="{{ .URL }}" target="_blank">{{ .title }}</a>
+          {{ else }}
+            {{ .title }}
+          {{ end }}
+        </span>
+
+        <!-- Journal/Container -->
+        {{ if index . "container-title" }}
+        <span class="journal">
+          <em>{{ index . "container-title" }}</em>{{ if .volume }}, {{ .volume }}{{ end }}{{ if .issue }}({{ .issue }}){{ end }}{{ if .page }}, {{ .page }}{{ end }}
+        </span>
+        {{ end }}
+
+        <!-- DOI -->
+        {{ if .DOI }}
+        <span class="doi">
+          DOI: <a href="https://doi.org/{{ .DOI }}" target="_blank">{{ .DOI }}</a>
+        </span>
+        {{ end }}
+
+        <!-- Copy BibTeX Button -->
+        <button class="copy-bibtex-btn" onclick="copyBibTeX({{ $index }})" title="Copy BibTeX">
+          📋
+        </button>
+
+        <!-- Hidden BibTeX data -->
+        <script type="application/json" id="bibtex-{{ $index }}">
+        {{ $bibtex := "" }}
+        {{ $bibtex = printf "@article{%s," (.id | default (printf "publication%d" $index)) }}
+        {{ $bibtex = printf "%s\n  title = {%s}," $bibtex .title }}
+        {{ if .author }}
+          {{ $authorStr := "" }}
+          {{ $authorLen := len .author }}
+          {{ range $i, $author := .author }}
+            {{ if .literal }}
+              {{ $authorStr = printf "%s%s" $authorStr .literal }}
+            {{ else }}
+              {{ $authorStr = printf "%s%s, %s" $authorStr .family .given }}
+            {{ end }}
+            {{ if lt $i (sub $authorLen 1) }}{{ $authorStr = printf "%s and " $authorStr }}{{ end }}
+          {{ end }}
+          {{ $bibtex = printf "%s\n  author = {%s}," $bibtex $authorStr }}
+        {{ end }}
+        {{ if index . "container-title" }}
+          {{ $bibtex = printf "%s\n  journal = {%s}," $bibtex (index . "container-title") }}
+        {{ end }}
+        {{ if .volume }}
+          {{ $bibtex = printf "%s\n  volume = {%s}," $bibtex .volume }}
+        {{ end }}
+        {{ if .issue }}
+          {{ $bibtex = printf "%s\n  number = {%s}," $bibtex .issue }}
+        {{ end }}
+        {{ if .page }}
+          {{ $bibtex = printf "%s\n  pages = {%s}," $bibtex .page }}
+        {{ end }}
+        {{ if .issued }}
+          {{ $year := "" }}
+          {{ range index .issued "date-parts" }}{{ $year = index . 0 }}{{ end }}
+          {{ $bibtex = printf "%s\n  year = {%s}," $bibtex $year }}
+        {{ end }}
+        {{ if .DOI }}
+          {{ $bibtex = printf "%s\n  doi = {%s}," $bibtex .DOI }}
+        {{ end }}
+        {{ if .URL }}
+          {{ $bibtex = printf "%s\n  url = {%s}," $bibtex .URL }}
+        {{ end }}
+        {{ $bibtex = printf "%s\n}" $bibtex }}
+        {{ $bibtex | jsonify }}
+        </script>
+      </li>
+    </ul>
+  </div>
+  {{ end }}
+</div>
+
+<script>
+function copyBibTeX(index) {
+  const bibtexElement = document.getElementById(`bibtex-${index}`);
+  const bibtexData = JSON.parse(bibtexElement.textContent);
+
+  navigator.clipboard.writeText(bibtexData).then(() => {
+    // Visual feedback
+    const button = event.target;
+    const originalText = button.textContent;
+    button.textContent = '✅';
+    button.style.color = 'green';
+
+    setTimeout(() => {
+      button.textContent = originalText;
+      button.style.color = '';
+    }, 2000);
+  }).catch(err => {
+    console.error('Failed to copy: ', err);
+    // Fallback for older browsers
+    const textArea = document.createElement('textarea');
+    textArea.value = bibtexData;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+  });
+}
+</script>
+
+<style>
+.copy-bibtex-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+}
+
+.copy-bibtex-btn:hover {
+  background-color: #f0f0f0;
+}
+</style>

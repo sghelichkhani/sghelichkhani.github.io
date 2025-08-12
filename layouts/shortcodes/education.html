@@ -1,0 +1,17 @@
+<div class="block-line">
+  {{ $dataSource := .Get 0 | default "experience" }}
+  {{ range $index, $element := index .Site.Data $dataSource }}
+  <div class="container {{ if modBool $index 2 }}right{{ else }}right{{ end }}">
+    <span class="date">{{ $element.range }}</span>
+    <div class="content">
+      <div class="title">{{ $element.degree }}{{ with $element.major }} in {{ . }}{{ end }}.</div>
+      <div class="subtitle">
+        <span>{{ $element.school | markdownify }}.</span>
+      </div>
+      {{ with $element.notes }}
+      <div class="notes">{{ . }}</div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</div>

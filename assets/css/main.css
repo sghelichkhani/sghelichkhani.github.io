@@ -1,6 +1,6 @@
 :root {
-  --content-width: 1120px;
-  --container-width: 810px;
+  --content-width: 1220px;
+  --container-width: 910px;
 
   --light-primary-color: 255, 255, 255;
   --light-secondary-color: #dddddd;
@@ -702,53 +702,65 @@ table td {
 }
 
 
-.experience {
+.block-line {
     position: relative;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px 0;
 }
 
-.experience::after {
+.block-line::after {
     content: '';
     position: absolute;
     width: 6px;
-    background-color: #ddd;
+    background-color: #010101;
     top: 0;
     bottom: 0;
-    left: 50%;
+    left: 1%;
     margin-left: -3px;
 }
 
+.block-line::before {
+    content: '▼';
+    position: absolute;
+    bottom: -25px;
+    left: 1%;
+    transform: translateX(-50%);
+    color: #010101;
+    font-size: 22px;
+    z-index: 1;
+}
+
 .container {
-    padding: 10px 40px;
+    padding: 0px 0px;
     position: relative;
     background-color: inherit;
-    width: 50%;
+    width: 90%;
 }
 
 .container.left {
     left: 0;
+    right: 10%;
 }
 
 .container.right {
-    left: 50%;
+    left: 0%;
 }
 
 .date {
     position: absolute;
-    width: 60px;
-    top: 15px;
+    width: 150px;
+    top: 50px;
     font-size: 12px;
     color: #888;
 }
 
 .container.left .date {
-    right: -60px;
+    right: -130px;
 }
 
 .container.right .date {
-    left: -60px;
+    left: -130px;
 }
 
 .content {

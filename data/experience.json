@@ -1,20 +1,23 @@
 [
-    {
-        "role":"Boss man",
-        "company":"Current Company LTD",
-        "summary":"Led in development of fast paced software teams.\n- list\n- of\n- things",
-        "range":"February 2016 - Present"
-    },
-    {
-        "role":"Developer",
-        "company":"Current Company LTD",
-        "summary":"Expedited the synergies of collaborative agile tooling.",
-        "range":"March 2014 - February 2016"
-    },
-    {
-        "role":"Developer",
-        "company":"Previous Company Inc.",
-        "summary":"Implemented continuous devops pipelines automationing",
-        "range":"February 2013 - March 2014"
-    }
+  {
+    "startDate": "Jan 2014",
+    "endDate": "Jul 2019",
+    "position": "PhD in Geodynamics",
+    "company": " [LMU Munich](https://www.lmu.de) ",
+    "location": "Munich, Germany"
+  },
+  {
+    "startDate": "Nov 2019",
+    "endDate": "Nov 2023",
+    "position": "Research Fellow (Level A & B)",
+    "company": "Australian National University, Geophysics",
+    "location": "Canberra, Australia"
+  },
+  {
+    "startDate": "Dec 2023",
+    "endDate": "Present",
+    "position": "Faculty (Level B)",
+    "company": "Australian National University, Climate and Ocean Geoscience",
+    "location": "Canberra, Australia"
+  }
 ]

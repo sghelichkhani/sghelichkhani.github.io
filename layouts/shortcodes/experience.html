@@ -1,11 +1,12 @@
-<div class="experience">
-  {{ range $index, $element := .Site.Data.experience }}
-  <div class="container {{ if modBool $index 2 }}right{{ else }}left{{ end }}">
+<div class="block-line">
+  {{ $dataSource := .Get 0 | default "experience" }}
+  {{ range $index, $element := index .Site.Data $dataSource }}
+  <div class="container right">
     <span class="date">{{ $element.startDate }} - {{ $element.endDate }}</span>
     <div class="content">
-      <div class="title">{{ $element.position }}</div>
+      <div class="title">{{ $element.position }}.</div>
       <div class="subtitle">
-        <span>{{ $element.company }}</span> <span>{{ $element.location }}</span>
+        <span>{{ $element.company }}, </span> <span>{{ $element.location }}.</span>
       </div>
     </div>
   </div>

@@ -1,15 +1,21 @@
 [
     {
-        "school":"[Rochester Institute of Technology](https://rit.edu)",
-        "degree":"Bachelor of Science",
-        "major":"Management Information Systems",
-        "notes":"Beta Gamma Signma, High Honors",
-        "range":"2006 - 2008"
+        "school":"[Uni Tehran](https://ut.ac.ir/en)",
+        "degree":"BSc",
+        "major":"Physics",
+        "range":"Sep 2006 - Jun 2011"
     },
     {
-        "school":"Clinton Community College",
-        "degree":"Associate of Applied Science",
-        "major":"Computer Information Systems",
-        "range":"2004 - 2006"
+        "school":"[LMU Munich](https://www.lmu.de) + [TUM Munich](https://www.tum.de)",
+        "degree":"MSc",
+        "major":"Geophysics",
+        "range":"Oct 2011 -  July 2013"
+    },
+    {
+        "school":"[LMU Munich](https://www.lmu.de)",
+        "degree":"PhD",
+        "major":"Geodynanmics",
+        "notes": "Thesis: Reconstruction of Mantle Flow in Space and Time",
+        "range":"Jan 2014 - Jul 2019"
     }
 ]
