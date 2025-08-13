@@ -91,6 +91,14 @@ pre {
   background-color: var(--dark-secondary-color);
 }
 
+.block-line::after {
+    background-color: var(--dark-text-color);
+}
+
+.block-line::before {
+    color: var(--dark-text-color);
+}
+
 /* TODO: Check if this is needed or not */
 /*
 img,

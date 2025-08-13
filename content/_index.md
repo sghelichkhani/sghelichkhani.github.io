@@ -1,2 +1,1 @@
-### Welcome to my homepage!
-I am Sia Ghelichkhan, and this is where I showcase my projects and research. Here, you will find resources for students to follow along with my research projects, as well as my posts about various topics I am passionate about. Additionally, you can learn more about me and my work.
+Hi! I'm Sia Ghelichkhan, and welcome to my corner of the internet! This is where I share my research adventures and projects. You'll find resources to follow along with what I'm working on, plus my thoughts on topics I'm genuinely excited about. Feel free to poke around and get to know me and my work better!

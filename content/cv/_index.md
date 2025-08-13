@@ -6,13 +6,9 @@ ShowTableOfContents: true
 
 This section contains my academic curriculum vitae, updated regularly as my career progresses.
 
----
-
-## Professional Experience
+## Jobs
 
 {{< experience "experience" >}}
-
----
 
 ## Education
 
@@ -20,7 +16,7 @@ This section contains my academic curriculum vitae, updated regularly as my care
 
 ---
 
-## Invited Talks and Seminars
+## Talks and Seminars
 
 - **ETH Zurich** -- 2025, Zurich
 - **International Union of Geodesy and Geophysics** -- 2024, New Delhi
@@ -33,9 +29,7 @@ This section contains my academic curriculum vitae, updated regularly as my care
 - **Basin Genesis Hub Workshop** -- 2019, Sydney
 - **SIAM Conference on Mathematical and Computational Issues in Geosciences** -- 2019, Houston
 
----
-
-## Awards, Fellowships, and Affiliations
+## Awards, Fellowships, Affiliations
 
 - Nominated for the **J. G. Russell Award** by the Australian Academy of Sciences for the top-ranked DECRA applicant of the year in Sciences
 - **DECRA** (Discovery Early Career Researcher Award) Fellow of the Australian Research Council (2025)
@@ -43,9 +37,7 @@ This section contains my academic curriculum vitae, updated regularly as my care
 - Affiliated Investigator of the Australian Centre for Excellence in Antarctic Science (ACEAS), 2022–Present
 - Computers & Geosciences Research Scholarship Award, International Association of Mathematical Geosciences (2019)
 
----
-
-## Research Supervision
+## Academic Supervision
 
 - **Dr Hamish Brown**: Supervisors: Sia Ghelichkhan, Rhodri Davies; 2025 – Present
 - **Dr Liam Morrow**: Supervisor: Sia Ghelichkhan; 2024 – Present
@@ -55,9 +47,9 @@ This section contains my academic curriculum vitae, updated regularly as my care
 - **Tom New**: Supervisors: Maria Seton, Sia Ghelichkhan, Rhodri Davies, Ben Mather; 2023 – Present
 - **Ishan Tandon**: Supervisors: Sia Ghelichkhan, Mark Hoggard, Rhys Hawkins, Rhodri Davies; Jun–Dec 2023
 
----
+## Grants and Funding
 
-## Selected Grants and Funding
+Selected grants and funding awards include:
 
 - **DECRA Fellowship**: Sea Level in the MPWP: Unveiling Dynamic Topography Effects. *ARC*, AUD 563,281 (2024)
 - **Modelling Australia's Water Dynamics**, *SmartSat CRC*, AUD 500,000. CI: **S. Ghelichkhan**, P. Tregoning (2024)
