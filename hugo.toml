@@ -55,22 +55,28 @@ title = "Sia Ghelichkhan"
     weight = 1
 
   [[menu.main]]
-    name = "Posts"
-    pre = "<span data-feather='book'></span>"
-    url = "/posts/"
+    name = "Talks"
+    pre = "<span data-feather='monitor'></span>"
+    url = "/talks/"
     weight = 2
 
   [[menu.main]]
-    name = "Research"
-    pre = "<span data-feather='code'></span>"
-    url = "/research/"
+    name = "Posts"
+    pre = "<span data-feather='edit-3'></span>"
+    url = "/posts/"
     weight = 3
 
   [[menu.main]]
-    name = "Curriculum Vitae"
-    pre = "<span data-feather=''></span>"
-    url = "/cv/"
+    name = "Research"
+    pre = "<span data-feather='book-open'></span>"
+    url = "/research/"
     weight = 4
+
+  [[menu.main]]
+    name = "Curriculum Vitae"
+    pre = "<span data-feather='file-text'></span>"
+    url = "/cv/"
+    weight = 5
 
   [[menu.main]]
     name = "Tags"
