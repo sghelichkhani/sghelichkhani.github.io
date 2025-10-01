@@ -64,21 +64,21 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-       - name: Checkout qdownnotes
-         uses: actions/checkout@v4
-         with:
-           repository: 'sghelichkhani/qdpad'
-           path: 'qdpad'
-           token: ${{ secrets.PAT_TOKEN }}
-       - name: Build HTML from qdpad and copy to static
-         run: |
-           cd qdpad
-           make html
-           mkdir -p ../static/talks
-           cp -r html_dir/* ../static/talks/
-           echo "Contents of static/talks directory:"
-           ls -la ../static/talks/
-       - name: Convert BibTeX to JSON
+      - name: Checkout qdownnotes
+        uses: actions/checkout@v4
+        with:
+          repository: 'sghelichkhani/qdpad'
+          path: 'qdpad'
+          token: ${{ secrets.PAT_TOKEN }}
+      - name: Build HTML from qdpad and copy to static
+        run: |
+          cd qdpad
+          make html
+          mkdir -p ../static/talks
+          cp -r html_dir/* ../static/talks/
+          echo "Contents of static/talks directory:"
+          ls -la ../static/talks/
+      - name: Convert BibTeX to JSON
         run: |
           if [ -f "publications.bib" ]; then
             echo "Converting publications.bib to data/publications.json"
