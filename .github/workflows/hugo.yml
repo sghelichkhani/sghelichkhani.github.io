@@ -43,12 +43,17 @@ jobs:
         run: sudo snap install dart-sass
       - name: Install Pandoc
         run: sudo apt-get update && sudo apt-get install -y pandoc
-      - name: Install Quarkdown
+      - name: Clone quarkdown
+        uses: GuillaumeFalourd/clone-github-repo-action@main
+        with:
+          owner: 'sghelichkhani'
+          repository: 'quarkdown'
+      - name: Build Quarkdown distribution
         run: |
-          # Install Quarkdown CLI
-          npm install -g @quarkdown/cli
-          # Verify installation
-          quarkdown --version
+          cd quarkdown
+          ./gradlew build installDist
+      - name: Add quarkdown to PATH
+        run: echo "PATH=$PATH:$GITHUB_WORKSPACE/quarkdown/build/install/quarkdown/bin/" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v4
         with:
