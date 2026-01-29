@@ -1,18 +1,26 @@
 <div class="publications-list" itemscope itemtype="https://schema.org/ItemList">
   {{ $publications := .Site.Data.publications }}
-  {{ $sortedPubs := sort $publications "issued.date-parts" "desc" }}
-  {{ range $index, $pub := $sortedPubs }}
-  {{ $year := "" }}{{ range index .issued "date-parts" }}{{ $year = index . 0 }}{{ end }}
+  {{/* Build a slice with year extracted for proper sorting */}}
+  {{ $pubsWithYear := slice }}
+  {{ range $publications }}
+    {{ $year := index (index (index .issued "date-parts") 0) 0 | default 0 }}
+    {{ $pubsWithYear = $pubsWithYear | append (dict "year" $year "pub" .) }}
+  {{ end }}
+  {{/* Sort by year descending */}}
+  {{ $sortedPubs := sort $pubsWithYear "year" "desc" }}
+  {{ range $index, $item := $sortedPubs }}
+  {{ $pub := .pub }}
+  {{ $year := .year }}
   <div class="publication-item" itemscope itemtype="https://schema.org/ScholarlyArticle" itemprop="itemListElement">
     <meta itemprop="position" content="{{ add $index 1 }}">
-    {{ if .DOI }}<meta itemprop="identifier" content="doi:{{ .DOI }}">{{ end }}
+    {{ if $pub.DOI }}<meta itemprop="identifier" content="doi:{{ $pub.DOI }}">{{ end }}
     {{ if $year }}<meta itemprop="datePublished" content="{{ $year }}">{{ end }}
     <ul>
       <li>
         <!-- Authors -->
         <span class="authors" itemprop="author">
           {{ $authors := slice }}
-          {{ range .author }}
+          {{ range $pub.author }}
             {{ if .literal }}
               {{ $authors = $authors | append .literal }}
             {{ else }}
@@ -23,32 +31,32 @@
         </span>
 
         <!-- Year -->
-        {{ if .issued }}
+        {{ if $year }}
         <span class="year">
-          ({{ range index .issued "date-parts" }}{{ index . 0 }}{{ end }})
+          ({{ $year }})
         </span>
         {{ end }}
 
         <!-- Title -->
         <span class="title" itemprop="headline">
-          {{ if .URL }}
-            <a href="{{ .URL }}" target="_blank" itemprop="url">{{ .title }}</a>
+          {{ if $pub.URL }}
+            <a href="{{ $pub.URL }}" target="_blank" itemprop="url">{{ $pub.title }}</a>
           {{ else }}
-            {{ .title }}
+            {{ $pub.title }}
           {{ end }}
         </span>
 
         <!-- Journal/Container -->
-        {{ if index . "container-title" }}
+        {{ if index $pub "container-title" }}
         <span class="journal" itemprop="isPartOf" itemscope itemtype="https://schema.org/Periodical">
-          <em itemprop="name">{{ index . "container-title" }}</em>{{ if .volume }}, <span itemprop="volumeNumber">{{ .volume }}</span>{{ end }}{{ if .issue }}(<span itemprop="issueNumber">{{ .issue }}</span>){{ end }}{{ if .page }}, <span itemprop="pagination">{{ .page }}</span>{{ end }}
+          <em itemprop="name">{{ index $pub "container-title" }}</em>{{ if $pub.volume }}, <span itemprop="volumeNumber">{{ $pub.volume }}</span>{{ end }}{{ if $pub.issue }}(<span itemprop="issueNumber">{{ $pub.issue }}</span>){{ end }}{{ if $pub.page }}, <span itemprop="pagination">{{ $pub.page }}</span>{{ end }}
         </span>
         {{ end }}
 
         <!-- DOI -->
-        {{ if .DOI }}
+        {{ if $pub.DOI }}
         <span class="doi">
-          DOI: <a href="https://doi.org/{{ .DOI }}" target="_blank" itemprop="sameAs">{{ .DOI }}</a>
+          DOI: <a href="https://doi.org/{{ $pub.DOI }}" target="_blank" itemprop="sameAs">{{ $pub.DOI }}</a>
         </span>
         {{ end }}
 
@@ -60,12 +68,12 @@
         <!-- Hidden BibTeX data -->
         <script type="application/json" id="bibtex-{{ $index }}">
         {{ $bibtex := "" }}
-        {{ $bibtex = printf "@article{%s," (.id | default (printf "publication%d" $index)) }}
-        {{ $bibtex = printf "%s\n  title = {%s}," $bibtex .title }}
-        {{ if .author }}
+        {{ $bibtex = printf "@article{%s," ($pub.id | default (printf "publication%d" $index)) }}
+        {{ $bibtex = printf "%s\n  title = {%s}," $bibtex $pub.title }}
+        {{ if $pub.author }}
           {{ $authorStr := "" }}
-          {{ $authorLen := len .author }}
-          {{ range $i, $author := .author }}
+          {{ $authorLen := len $pub.author }}
+          {{ range $i, $author := $pub.author }}
             {{ if .literal }}
               {{ $authorStr = printf "%s%s" $authorStr .literal }}
             {{ else }}
@@ -75,28 +83,26 @@
           {{ end }}
           {{ $bibtex = printf "%s\n  author = {%s}," $bibtex $authorStr }}
         {{ end }}
-        {{ if index . "container-title" }}
-          {{ $bibtex = printf "%s\n  journal = {%s}," $bibtex (index . "container-title") }}
+        {{ if index $pub "container-title" }}
+          {{ $bibtex = printf "%s\n  journal = {%s}," $bibtex (index $pub "container-title") }}
         {{ end }}
-        {{ if .volume }}
-          {{ $bibtex = printf "%s\n  volume = {%s}," $bibtex .volume }}
+        {{ if $pub.volume }}
+          {{ $bibtex = printf "%s\n  volume = {%s}," $bibtex $pub.volume }}
         {{ end }}
-        {{ if .issue }}
-          {{ $bibtex = printf "%s\n  number = {%s}," $bibtex .issue }}
+        {{ if $pub.issue }}
+          {{ $bibtex = printf "%s\n  number = {%s}," $bibtex $pub.issue }}
         {{ end }}
-        {{ if .page }}
-          {{ $bibtex = printf "%s\n  pages = {%s}," $bibtex .page }}
+        {{ if $pub.page }}
+          {{ $bibtex = printf "%s\n  pages = {%s}," $bibtex $pub.page }}
         {{ end }}
-        {{ if .issued }}
-          {{ $year := "" }}
-          {{ range index .issued "date-parts" }}{{ $year = index . 0 }}{{ end }}
+        {{ if $year }}
           {{ $bibtex = printf "%s\n  year = {%s}," $bibtex $year }}
         {{ end }}
-        {{ if .DOI }}
-          {{ $bibtex = printf "%s\n  doi = {%s}," $bibtex .DOI }}
+        {{ if $pub.DOI }}
+          {{ $bibtex = printf "%s\n  doi = {%s}," $bibtex $pub.DOI }}
         {{ end }}
-        {{ if .URL }}
-          {{ $bibtex = printf "%s\n  url = {%s}," $bibtex .URL }}
+        {{ if $pub.URL }}
+          {{ $bibtex = printf "%s\n  url = {%s}," $bibtex $pub.URL }}
         {{ end }}
         {{ $bibtex = printf "%s\n}" $bibtex }}
         {{ $bibtex | jsonify }}
