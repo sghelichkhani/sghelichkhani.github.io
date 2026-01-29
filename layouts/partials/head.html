@@ -2,6 +2,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Structured Data for Person (SEO) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sia Ghelichkhan",
+        "alternateName": ["Siavash Ghelichkhan", "S. Ghelichkhan"],
+        "url": "https://sia-g.com",
+        "image": "https://sia-g.com/images/IMG_0886.png",
+        "jobTitle": "Numerical Geophysicist",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Australian National University",
+            "url": "https://www.anu.edu.au"
+        },
+        "alumniOf": [
+            {
+                "@type": "Organization",
+                "name": "Ludwig Maximilian University of Munich"
+            },
+            {
+                "@type": "Organization",
+                "name": "University of Tehran"
+            }
+        ],
+        "sameAs": [
+            "https://github.com/sghelichkhani",
+            "https://www.linkedin.com/in/sia-ghelichkhan-36836026b/",
+            "https://x.com/SiavashGhelich",
+            "https://earthsciences.anu.edu.au/people/dr-sia-ghelichkhan",
+            "https://scholar.google.com/citations?user=YOUR_ID"
+        ],
+        "knowsAbout": ["Mantle Convection", "Glacial Isostatic Adjustment", "Groundwater Modelling", "Numerical Methods", "Geodynamics", "Computational Geophysics"]
+    }
+    </script>
+
     <style>
         :root {
             --accent-color: {{ .Site.Params.AccentColor | default "#FF4D4D" }};

@@ -1,12 +1,16 @@
-<div class="publications-list">
+<div class="publications-list" itemscope itemtype="https://schema.org/ItemList">
   {{ $publications := .Site.Data.publications }}
   {{ $sortedPubs := sort $publications "issued.date-parts" "desc" }}
   {{ range $index, $pub := $sortedPubs }}
-  <div class="publication-item">
+  {{ $year := "" }}{{ range index .issued "date-parts" }}{{ $year = index . 0 }}{{ end }}
+  <div class="publication-item" itemscope itemtype="https://schema.org/ScholarlyArticle" itemprop="itemListElement">
+    <meta itemprop="position" content="{{ add $index 1 }}">
+    {{ if .DOI }}<meta itemprop="identifier" content="doi:{{ .DOI }}">{{ end }}
+    {{ if $year }}<meta itemprop="datePublished" content="{{ $year }}">{{ end }}
     <ul>
       <li>
         <!-- Authors -->
-        <span class="authors">
+        <span class="authors" itemprop="author">
           {{ $authors := slice }}
           {{ range .author }}
             {{ if .literal }}
@@ -26,9 +30,9 @@
         {{ end }}
 
         <!-- Title -->
-        <span class="title">
+        <span class="title" itemprop="headline">
           {{ if .URL }}
-            <a href="{{ .URL }}" target="_blank">{{ .title }}</a>
+            <a href="{{ .URL }}" target="_blank" itemprop="url">{{ .title }}</a>
           {{ else }}
             {{ .title }}
           {{ end }}
@@ -36,15 +40,15 @@
 
         <!-- Journal/Container -->
         {{ if index . "container-title" }}
-        <span class="journal">
-          <em>{{ index . "container-title" }}</em>{{ if .volume }}, {{ .volume }}{{ end }}{{ if .issue }}({{ .issue }}){{ end }}{{ if .page }}, {{ .page }}{{ end }}
+        <span class="journal" itemprop="isPartOf" itemscope itemtype="https://schema.org/Periodical">
+          <em itemprop="name">{{ index . "container-title" }}</em>{{ if .volume }}, <span itemprop="volumeNumber">{{ .volume }}</span>{{ end }}{{ if .issue }}(<span itemprop="issueNumber">{{ .issue }}</span>){{ end }}{{ if .page }}, <span itemprop="pagination">{{ .page }}</span>{{ end }}
         </span>
         {{ end }}
 
         <!-- DOI -->
         {{ if .DOI }}
         <span class="doi">
-          DOI: <a href="https://doi.org/{{ .DOI }}" target="_blank">{{ .DOI }}</a>
+          DOI: <a href="https://doi.org/{{ .DOI }}" target="_blank" itemprop="sameAs">{{ .DOI }}</a>
         </span>
         {{ end }}
 

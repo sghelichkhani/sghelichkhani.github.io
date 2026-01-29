@@ -33,7 +33,7 @@ title = "Sia Ghelichkhan"
     </script>
   """
 
-  description = "Sapere aude."
+  description = "Sia Ghelichkhan - Numerical Geophysicist at the Australian National University. Research in numerical methods for geophysical continua, including mantle convection, glacial isostatic adjustment (GIA), and groundwater modelling."
 
   metaKeywords = ["Sia", "Ghelichkhan", "Earth Sciences", "Geodynamics", "Groundwater", "hugo"]
   showBackToTopButton = true # true or false for "back to top" button on posts and pages
