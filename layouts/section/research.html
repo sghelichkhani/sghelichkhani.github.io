@@ -1,0 +1,67 @@
+{{ define "main" }}
+<div class="post container">
+    <div class="post-header-section">
+        <h1>{{ .Title }}</h1>
+    </div>
+
+    <div class="post-content">
+        {{ .Content }}
+
+        {{ $research := where .Pages "Params.category" "research" }}
+        {{ $software := where .Pages "Params.category" "software" }}
+
+        {{ if $research }}
+        <h2 id="research-themes">Research Themes</h2>
+        <div class="research-grid">
+            {{ range $research }}
+            <a href="{{ .Permalink }}" class="research-card">
+                <div class="research-card-image">
+                    <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+                </div>
+                <div class="research-card-body">
+                    <h3>{{ .Title }}</h3>
+                    <p>{{ .Params.description }}</p>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        {{ $teaching := where .Pages "Params.category" "teaching" }}
+
+        {{ if $software }}
+        <h2 id="software">Software</h2>
+        <div class="research-grid">
+            {{ range $software }}
+            <a href="{{ .Permalink }}" class="research-card software-card">
+                <div class="research-card-image">
+                    <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+                </div>
+                <div class="research-card-body">
+                    <h3>{{ .Title }}</h3>
+                    <p>{{ .Params.description }}</p>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        {{ if $teaching }}
+        <h2 id="teaching">Teaching</h2>
+        <div class="research-grid">
+            {{ range $teaching }}
+            <a href="{{ .Permalink }}" class="research-card">
+                <div class="research-card-image">
+                    <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
+                </div>
+                <div class="research-card-body">
+                    <h3>{{ .Title }}</h3>
+                    <p>{{ .Params.description }}</p>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

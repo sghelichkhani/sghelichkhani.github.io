@@ -99,6 +99,22 @@ pre {
     color: var(--dark-text-color);
 }
 
+.research-card {
+  border-color: var(--dark-secondary-color);
+}
+
+.research-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.research-card-image {
+  background: rgb(var(--dark-primary-color));
+}
+
+.research-card.software-card .research-card-image {
+  background: #ffffff;
+}
+
 /* TODO: Check if this is needed or not */
 /*
 img,
