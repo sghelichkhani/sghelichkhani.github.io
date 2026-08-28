@@ -14,4 +14,5 @@ This section showcases my academic presentations, conference talks, and seminars
 
 ## Past Talks 
 
+- Friday, August 28th, 2026 - [The physics and numerics of variably saturated porous media](/talks/2026_08_28_GeophysicsWeekly/), Geophysics Weekly
 - Thursday, October 2nd, 2025 - Westpac Research Fund
