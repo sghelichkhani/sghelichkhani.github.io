@@ -14,5 +14,6 @@ This section showcases my academic presentations, conference talks, and seminars
 
 ## Past Talks 
 
+- Wednesday, September 23rd, 2026 - [Where RSES stands on diversity](/talks/2026_09_22_RSES_IDEA/), RSES faculty meeting
 - Friday, August 28th, 2026 - [The physics and numerics of variably saturated porous media](/talks/2026_08_28_GeophysicsWeekly/), Geophysics Weekly
 - Thursday, October 2nd, 2025 - Westpac Research Fund
