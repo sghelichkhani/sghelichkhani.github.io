@@ -51,6 +51,20 @@
         <span class="journal" itemprop="isPartOf" itemscope itemtype="https://schema.org/Periodical">
           <em itemprop="name">{{ index $pub "container-title" }}</em>{{ if $pub.volume }}, <span itemprop="volumeNumber">{{ $pub.volume }}</span>{{ end }}{{ if $pub.issue }}(<span itemprop="issueNumber">{{ $pub.issue }}</span>){{ end }}{{ if $pub.page }}, <span itemprop="pagination">{{ $pub.page }}</span>{{ end }}
         </span>
+        {{ else if and (in (slice "report" "thesis") $pub.type) $pub.publisher }}
+        {{/* Reports and theses have no journal. Pandoc maps the BibTeX
+             institution or school field to "publisher", so show that
+             instead, with a label that tells the reader the output type. */}}
+        <span class="journal">
+          <em>{{ if eq $pub.type "thesis" }}PhD thesis{{ else }}Technical report{{ end }}, {{ $pub.publisher }}</em>
+        </span>
+        {{ end }}
+
+        <!-- Recognition note, for example an Eos Editors' Highlight.
+             It comes from the BibTeX "note" field, so the bib file stays
+             the single source for everything shown in this list. -->
+        {{ with $pub.note }}
+        <span class="pub-note">&#9733; {{ . }}</span>
         {{ end }}
 
         <!-- DOI -->
@@ -152,6 +166,15 @@ function copyBibTeX(index) {
   padding: 2px 5px;
   border-radius: 3px;
   transition: background-color 0.2s;
+}
+
+/* Recognition note: accent colour so that it stands out in a long list. */
+.pub-note {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: var(--accent-color);
 }
 
 .copy-bibtex-btn:hover {
