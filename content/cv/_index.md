@@ -7,8 +7,8 @@ ShowTableOfContents: true
 I am a numerical geophysicist and ARC DECRA Fellow at the Research School of Earth Sciences, Australian National University. I build adjoint and inverse methods for mantle convection, glacial isostatic adjustment and continental-scale groundwater, and I am a core developer of the open-source framework [G-ADOPT](/research/g-adopt/).
 
 - **2026 Outstanding Early Career Scientist Award**, Geodynamics Division, European Geosciences Union
-- **AUD 4.4 million** total value of grants on which I am an investigator, including AUD 1.06 million as sole investigator
-- **1,235 citations, h-index 18** ([Google Scholar](https://scholar.google.com/citations?user=45YDfF4AAAAJ), October 2026)
+- **AUD 13.0 million** total value of grants on which I am an investigator, including AUD 1.06 million as sole investigator (GeoPath counted at its cash contribution only)
+- **1,232 citations, h-index 18** ([Google Scholar](https://scholar.google.com/citations?user=45YDfF4AAAAJ), October 2026)
 - **More than 30 publications**, including two papers in *Nature Geoscience*
 
 ## Jobs
@@ -33,8 +33,9 @@ I am a numerical geophysicist and ARC DECRA Fellow at the Research School of Ear
 
 ## Grants and Funding
 
-Total value of grants on which I am an investigator: **AUD 4,441,364** (amounts from the ANU research grants system, October 2026).
+Total value of grants on which I am an investigator: **about AUD 13.0 million**. This is the sum of AUD 4,441,364 for the six grants below other than GeoPath (amounts from the ANU research grants system, October 2026) and AUD 8.57 million for GeoPath. For GeoPath I count only the cash: AUD 3.66 million from the ARC, AUD 2.75 million from partners and AUD 2.16 million from the universities. I do not count the AUD 6.03 million of in-kind support, so that the total is not inflated by contributions that are not cash. Earlier versions of this page gave AUD 4.4 million (before the GeoPath award) and AUD 8.1 million (the ARC share of GeoPath only).
 
+- **ARC Research Hub for Geodynamic Pathways to Critical Resources (GeoPath)** (IH260100045): *Australian Research Council*, Industrial Transformation Research Program, AUD 14.6 million over five years (awarded 2026): AUD 3,660,405 from the ARC, AUD 2.75 million partner cash, AUD 2.16 million university cash and AUD 6.03 million in kind. Counted in the total above at AUD 8.57 million (cash only). Director: D. R. Davies; 34 investigators, with **S. Ghelichkhan** as a chief investigator
 - **ARC DECRA Fellowship** (DE250100663): Sea Level in the Mid-Pliocene Warm Period: Unveiling Earth's Mantle Effects. *Australian Research Council*, AUD 563,281 (2025–2028). Sole investigator: **S. Ghelichkhan**
 - **ANU Futures Scheme 2.0**: *Australian National University*, AUD 500,000 (2023–2028). Sole investigator: **S. Ghelichkhan**
 - **From Space to Ground: Modelling Australia's Water Dynamics through Remote Sensing and Land Surface Modelling** (P3-49). *SmartSat CRC*, AUD 506,033 (2025–2026). CIs: **S. Ghelichkhan** (leads the research), P. Tregoning (project leader), L. Maubant, R. McGirr
