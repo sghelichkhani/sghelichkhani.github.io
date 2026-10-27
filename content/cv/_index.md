@@ -57,11 +57,12 @@ Total value of grants on which I am an investigator: **about AUD 13.0 million**.
 
 ## Academic Supervision
 
+- **Arindam Mukherjee**: Supervisor: Sia Ghelichkhan; Dec 2026 – Present
 - **Dr Hamish Brown**: Supervisors: Sia Ghelichkhan, Rhodri Davies; 2025 – Present
 - **Dr Liam Morrow**: Supervisor: Sia Ghelichkhan; 2024 – Present
+- **Riik Basu**: Supervisor: Sia Ghelichkhan; Dec 2024 – Present
 - **Dr Will Scott**: Supervisors: Rhodri Davies, Sia Ghelichkhan, Mark Hoggard; 2023 – Present
 - **Ruby Turner**: Primary Supervisor: Sia Ghelichkhan; 2023 – 2025
-- **Hojatollah Shirmardgouravan**: Supervisors: R. Dietmar Müller, Sia Ghelichkhan; 2023 – Present
 - **Tom New**: Supervisors: Maria Seton, Sia Ghelichkhan, Rhodri Davies, Ben Mather; 2023 – Present
 - **Ishan Tandon**: Supervisors: Sia Ghelichkhan, Mark Hoggard, Rhys Hawkins, Rhodri Davies; Jun–Dec 2023
 
