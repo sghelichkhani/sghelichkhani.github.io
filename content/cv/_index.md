@@ -4,7 +4,7 @@ type: "page"
 ShowTableOfContents: true
 ---
 
-I am a numerical geophysicist and ARC DECRA Fellow at the Research School of Earth Sciences, Australian National University. I build adjoint and inverse methods for mantle convection, glacial isostatic adjustment and continental-scale groundwater, and I am a core developer of the open-source framework [G-ADOPT](/research/g-adopt/).
+I am a numerical geophysicist and ARC DECRA Fellow at the Research School of Earth Sciences, Australian National University. I was promoted to Senior Lecturer (Level C), effective 1 January 2027, after holding a Lecturer (Level B) position since January 2024. I am also a Fellow of the ANU Institute for Water Futures and a chief investigator of the ARC Research Hub for Geodynamic Pathways to Critical Resources (GeoPath). I build adjoint and inverse methods for mantle convection, glacial isostatic adjustment and continental-scale groundwater, and I am a core developer of the open-source framework [G-ADOPT](/research/g-adopt/).
 
 - **2026 Outstanding Early Career Scientist Award**, Geodynamics Division, European Geosciences Union
 - **AUD 13.0 million** total value of grants on which I am an investigator, including AUD 1.06 million as sole investigator (GeoPath counted at its cash contribution only)
@@ -86,19 +86,20 @@ Total value of grants on which I am an investigator: **about AUD 13.0 million**.
 
 - **EGU General Assembly**, May 2026, Vienna: Geodynamics Division Outstanding Early Career Scientist Award Lecture
 - **ETH Zurich**, 2025, Zurich
+- **EGU General Assembly**, May 2025, Vienna: Unveiling Late Cenozoic dynamic topography evolution using non-linear adjoint models (invited)
+- **International Union of Geodesy and Geophysics General Assembly**, 2024, New Delhi (invited)
+- **EGU General Assembly**, 2023, Vienna: The Earth surface as a window into the asthenosphere and deeper mantle (invited)
+- **AGU Fall Meeting**, December 2021, session Integrative Perspectives on Present-day Mantle Structure (invited)
 - **EarthByte Group**, September 2021, School of Geosciences, University of Sydney
+- **SIAM Conference on Mathematical and Computational Issues in the Geosciences**, 2019, Houston (invited)
 - **Basin Genesis Hub Workshop**, 2019, Sydney
 
 ## Talks and Seminars
 
 - **Geophysics Weekly**, August 2026: The physics and numerics of variably saturated porous media
-- **International Union of Geodesy and Geophysics General Assembly**, 2024, New Delhi
 - **Australian Earth Sciences Convention**, 2023, Perth
 - **Geophysics Seminar**, May 2023, LMU Munich
-- **EGU General Assembly**, 2023, Vienna: The Earth surface as a window into the asthenosphere and deeper mantle
 - **Geocomputing Seminar**, March 2022, LMU Munich
-- **AGU Fall Meeting**, 2021, session Integrative Perspectives on Present-day Mantle Structure
-- **SIAM Conference on Mathematical and Computational Issues in the Geosciences**, 2019, Houston
 
 ## Media and Outreach
 
@@ -113,10 +114,10 @@ Total value of grants on which I am an investigator: **about AUD 13.0 million**.
 
 Citation metrics: 1,235 citations, h-index 18, i10-index 23 ([Google Scholar](https://scholar.google.com/citations?user=45YDfF4AAAAJ), October 2026). ORCID: [0000-0002-1316-3170](https://orcid.org/0000-0002-1316-3170).
 
-### Manuscripts submitted or in preparation
+### Manuscripts under review or in preparation
 
-- **S. Ghelichkhan**, D. R. Davies, A. Gibson, D. Roberts, S. C. Kramer, M. J. Hoggard, W. I. Scott and T. Duvernay. *Frontiers and future directions in inverse modelling of mantle convection*. Submitted to *Proceedings of the Royal Society A*.
-- L. Morrow, **S. Ghelichkhan** and S. C. Kramer. *Scalable and locally mass-conservative simulation of basin-scale variably saturated groundwater flow*.
+- T. New, **S. Ghelichkhan**, D. R. Davies, M. Seton, B. Mather and R. D. Müller. *Seismic images of a mantle circulation model driven by a plate reconstruction: effects of mineral-physics conversion and tomographic resolution on slabs and global structure*. In preparation for *Geochemistry, Geophysics, Geosystems*.
+- L. Morrow, **S. Ghelichkhan** and S. C. Kramer. *Scalable and locally mass-conservative simulation of basin-scale variably saturated groundwater flow*. Under review, *Geoscientific Model Development* (in open discussion; preprint [10.31223/X57221](https://doi.org/10.31223/X57221)).
 
 ### Published
 

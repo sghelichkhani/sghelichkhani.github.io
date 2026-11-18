@@ -6,12 +6,18 @@
 
 - startDate: "Nov 2019"
   endDate: "Nov 2023"
-  position: "Research Fellow (Level A & B)"
+  position: "Research Fellow (Level A)"
   company: "ANU, RSES, Geophysics"
   location: "Canberra, Australia"
 
 - startDate: "Dec 2023"
+  endDate: "Dec 2026"
+  position: "Lecturer (Level B from Jan 2024)"
+  company: "ANU, RSES, Climate and Ocean Geoscience"
+  location: "Canberra, Australia"
+
+- startDate: "Jan 2027"
   endDate: "Present"
-  position: "Faculty (Level B)"
+  position: "Senior Lecturer (Level C)"
   company: "ANU, RSES, Climate and Ocean Geoscience"
   location: "Canberra, Australia"
